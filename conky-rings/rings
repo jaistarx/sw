@@ -33,8 +33,8 @@ gap_x 0
 gap_y 110
  
 # -- Graphics settings -- #
-draw_shades yes
-draw_outline yes
+draw_shades no
+draw_outline no
 draw_borders no
 draw_graph_borders no
  
@@ -53,11 +53,11 @@ lua_draw_hook_pre clock_rings
  
 own_window_colour 000000
 TEXT
-  ${font Santana:size=12}           Root   --> ${fs_used /}/${fs_size /}
+  ${font Santana:size=12}          Root   --> ${fs_used /}/${fs_size /}
              Home --> ${fs_used /home}/${fs_size /home}$font
-${voffset 85}${goto 114}${font Santana:size=24}${time %I:%M}${voffset -10}${font Santana:size=10}${font}
+${voffset 77}${goto 114}${font Santana:size=24}${time %I:%M}${voffset -10}${font Santana:size=10}${font}
 ${voffset 90}${goto 30}${time %A, %d %B %Y}						
-${font Santana:size=12}${voffset 0}${goto 70}BATTERY --> ${battery BAT1}
+${font Santana:size=12}${voffset 0}${goto 35}BATTERY --> ${battery BAT1}
 
 
 
