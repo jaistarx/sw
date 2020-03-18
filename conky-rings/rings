@@ -1,0 +1,72 @@
+# -- Conky settings -- #
+background no
+update_interval 1
+ 
+cpu_avg_samples 2
+net_avg_samples 2
+ 
+override_utf8_locale yes
+ 
+double_buffer yes
+no_buffers yes
+ 
+text_buffer_size 2048
+imlib_cache_size 0
+ 
+# -- Window specifications -- #
+ 
+own_window yes
+own_window_type normal
+own_window_transparent yes
+own_window_argb_visual yes
+own_window_argb_value 0
+own_window_hints undecorated,sticky,skip_taskbar,skip_pager,below
+ 
+border_inner_margin 0
+border_outer_margin 0
+ 
+minimum_size 0 310
+maximum_width 370
+ 
+alignment top_left
+gap_x 0
+gap_y 110
+ 
+# -- Graphics settings -- #
+draw_shades yes
+draw_outline yes
+draw_borders no
+draw_graph_borders no
+ 
+# -- Text settings -- #
+use_xft yes
+xftfont Santana:size=18
+xftalpha 0.8
+ 
+uppercase no
+ 
+ default_color 3248FF
+ 
+# -- Lua Load -- #
+lua_load ~/.conky/clock_rings.lua
+lua_draw_hook_pre clock_rings
+ 
+own_window_colour 000000
+TEXT
+  ${font Santana:size=12}           Root   --> ${fs_used /}/${fs_size /}
+             Home --> ${fs_used /home}/${fs_size /home}$font
+${voffset 85}${goto 114}${font Santana:size=24}${time %I:%M}${voffset -10}${font Santana:size=10}${font}
+${voffset 90}${goto 30}${time %A, %d %B %Y}						
+${font Santana:size=12}${voffset 0}${goto 70}BATTERY --> ${battery BAT1}
+
+
+
+${voffset -85}${goto 10}${alignr}${cpugraph 50,345 FFFE24 FF2424} #${voffset -18} ${alignr} ${execi 60 ~/.conky/gmailnotify.sh}
+
+    ${hr}
+${voffset 5}${goto 25}Logged In --> ${alignr}$USER
+${voffset 0}${goto 25}Kernel --> ${alignr}${kernel}${machine}
+${goto 25}Core Temp --> ${alignr}${acpitemp}°C
+${goto 25}Desktop --> ${alignr 5}${nodename}
+${goto 25}Frequency --> ${alignr}${freq_g (1)} GHz
+    ${hr}
