@@ -1,0 +1,1 @@
+ln -s /var/lib/snapd/desktop/applications/* .local/share/applications
