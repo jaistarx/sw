@@ -12,3 +12,8 @@ figlet -w 400 -f standard " /         J a i S t A r X          \ "
 printf "${ORANGE}"
 figlet -w 300 -f standard " \_=_- * <=< * >=> * -_=_/"
 printf "${STOP}"
+
+
+
+figlet -w 200 -f standard "|/                        J        a        i        S        t        A        r        X                          \|" |lolcat -a -d 1
+figlet -w 200 -f standard "|\_-_=_< * >=-= * <=_=< * >=_=> * =-=< * >_=_-_/|" |lolcat
