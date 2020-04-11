@@ -17,3 +17,7 @@ printf "${STOP}"
 
 figlet -w 200 -f standard "|/                        J        a        i        S        t        A        r        X                          \|" |lolcat -a -d 1
 figlet -w 200 -f standard "|\_-_=_< * >=-= * <=_=< * >=_=> * =-=< * >_=_-_/|" |lolcat
+
+
+figlet -w 200 -f standard "______(    J     a     i     S     t     A     r     X     )______" |lolcat -a -d 1
+figlet -w 200 -f standard "|\_=_-=-=-=>  *  <==< * >==>  *  <=-=-=-_=_/|" |lolcat
