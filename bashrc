@@ -21,3 +21,8 @@ figlet -w 200 -f standard "|\_-_=_< * >=-= * <=_=< * >=_=> * =-=< * >_=_-_/|" |l
 
 figlet -w 200 -f standard "______(    J     a     i     S     t     A     r     X     )______" |lolcat -a -d 1
 figlet -w 200 -f standard "|\_=_-=-=-=>  *  <==< * >==>  *  <=-=-=-_=_/|" |lolcat
+
+
+
+figlet -w 200 -f standard "_____(   J      A      I      S      T      A      R      X    )_____" |lolcat -a -d 1
+figlet -w 200 -f standard "|\_=_-=-=-=>  *  <==< * >==>  *  <=-=-=-_=_/|" |lolcat
