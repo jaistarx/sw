@@ -56,7 +56,8 @@ echo --------------------------------------------
 for /L %%i in (0,1,!repoCountFromZero!) do (
     set "repoName=!repoNames[%%i]!"
     set "repoUrl=%baseUrl%!repoName!%suffix%"
-    echo Cloning repository: !repoName!...
+    set /a repoNumber=%%i+1
+    echo [!repoNumber!] Cloning repository: !repoName!...
     echo --------------------------------------------
 
     git clone !repoUrl!
