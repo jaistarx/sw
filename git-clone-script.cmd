@@ -14,6 +14,9 @@ set repoNames[2]=repo3
 :: Add or remove repositories as needed
 set /a repoCount=3
 
+:: Calculate the last index of the repoNames array
+set /a repoCountFromZero=!repoCount!-1
+
 :: Output Header
 echo ============================================
 echo       Cloning Repositories and Switching Branches
@@ -23,7 +26,7 @@ echo.
 :: Show all repository names to be cloned with numbering (starting from 1)
 echo Repositories to be cloned:
 echo --------------------------------------------
-for /L %%i in (0,1,%repoCount%-1) do (
+for /L %%i in (0,1,!repoCountFromZero!) do ( 
     set "repoName=!repoNames[%%i]!"
     set /a repoNumber=%%i+1
     echo [!repoNumber!] !repoName!
@@ -38,7 +41,7 @@ if /I not "!userInput!"=="Y" (
 )
 
 :: Loop through the array and construct full URLs, then clone each repository
-for /L %%i in (0,1,%repoCount%-1) do (
+for /L %%i in (0,1,!repoCountFromZero!) do ( 
     set "repoName=!repoNames[%%i]!"
     set "repoUrl=%baseUrl%!repoName!%suffix%"
     echo Cloning repository: !repoName!...
