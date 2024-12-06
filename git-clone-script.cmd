@@ -20,12 +20,13 @@ echo       Cloning Repositories and Switching Branches
 echo ============================================
 echo.
 
-:: Show all repository names to be cloned
+:: Show all repository names to be cloned with numbering (starting from 1)
 echo Repositories to be cloned:
 echo --------------------------------------------
 for /L %%i in (0,1,%repoCount%-1) do (
     set "repoName=!repoNames[%%i]!"
-    echo !repoName!
+    set /a repoNumber=%%i+1
+    echo [!repoNumber!] !repoName!
 )
 echo --------------------------------------------
 
