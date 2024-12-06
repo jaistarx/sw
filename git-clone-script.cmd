@@ -4,15 +4,20 @@
 setlocal enabledelayedexpansion
 
 :: Define the common parts of the repository URL
-set "baseUrl=https://github.com/user/"
+set "baseUrl=git@github.com:Advantasure-RAQ/"
 set "suffix=.git"
 
 :: Define repository names directly in the script (dynamic list)
-set repoNames[0]=repo1
-set repoNames[1]=repo2
-set repoNames[2]=repo3
+set repoNames[0]=member-services
+set repoNames[1]=mri
+set repoNames[2]=mrr-processor
+set repoNames[3]=mrr-services
+set repoNames[4]=radv-app
+set repoNames[5]=rightfax
+set repoNames[6]=tepalert-db
+set repoNames[7]=tepops-db
 :: Add or remove repositories as needed
-set /a repoCount=3
+set /a repoCount=8
 
 :: Calculate the last index of the repoNames array
 set /a repoCountFromZero=!repoCount!-1
@@ -44,7 +49,9 @@ if /I not "!userInput!"=="Y" (
 for /L %%i in (0,1,!repoCountFromZero!) do ( 
     set "repoName=!repoNames[%%i]!"
     set "repoUrl=%baseUrl%!repoName!%suffix%"
-    echo Cloning repository: !repoName!...
+    set /a repoNumber=%%i+1
+    echo --------------------------------------------
+    echo [!repoNumber!] Cloning repository: !repoName!...
     echo --------------------------------------------
 
     git clone !repoUrl!
