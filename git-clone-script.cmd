@@ -13,7 +13,7 @@ set repoNames[1]=repo2
 set repoNames[2]=repo3
 :: Add or remove repositories as needed
 
-:: Add number of repositories
+:: Add total number of repositories
 set /a repoCount=3
 
 :: Default branch to switch to
