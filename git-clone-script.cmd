@@ -49,14 +49,15 @@ if "!branchInput!"=="" (
     set "branchInput=%defaultBranch%"
 )
 
-echo Branch to switch to: !branchInput!
 echo --------------------------------------------
+echo Branch to switch to: !branchInput!
 
 :: Loop through the array and construct full URLs, then clone each repository
 for /L %%i in (0,1,!repoCountFromZero!) do (
     set "repoName=!repoNames[%%i]!"
     set "repoUrl=%baseUrl%!repoName!%suffix%"
     set /a repoNumber=%%i+1
+	echo --------------------------------------------
     echo [!repoNumber!] Cloning repository: !repoName!...
     echo --------------------------------------------
 
